@@ -10,30 +10,30 @@ Your assignment page on Canvas should contain instructions for submitting this p
 
 ### Task 2: Minimum Viable Product
 
-- Wire the application together completing `api/server.js` and `index.js`.
-- Write four custom middleware functions detailed below, in `api/middleware/middleware.js`.
-- Use the custom middlewares in their appropriate places in the application (specific endpoints, entire routes or globally).
-- There are endpoints in `users-router.js` to retrieve the list of `posts` by a `user` and to store a new `post` for a `user`.
+[x] Wire the application together completing `api/server.js` and `index.js`.
+[] Write four custom middleware functions detailed below, in `api/middleware/middleware.js`.
+[] Use the custom middlewares in their appropriate places in the application (specific endpoints, entire routes or globally).
+[] There are endpoints in `users-router.js` to retrieve the list of `posts` by a `user` and to store a new `post` for a `user`.
 
 #### Custom Middleware Requirements
 
-- `logger()`
+[x] `logger()`
 
   - `logger` logs to the console the following information about each request: request method, request url, and a timestamp
   - this middleware runs on every request made to the API
 
-- `validateUserId()`
+[x] `validateUserId()`
 
   - this middleware will be used for all user endpoints that include an `id` parameter in the url (ex: `/api/users/:id` and it should check the database to make sure there is a user with that id.
   - if the `id` parameter is valid, store the user object as `req.user` and allow the request to continue
   - if the `id` parameter does not match any user id in the database, respond with status `404` and `{ message: "user not found" }`
 
-- `validateUser()`
+[x] `validateUser()`
 
   - `validateUser` validates the `body` on a request to create or update a user
   - if the request `body` lacks the required `name` field, respond with status `400` and `{ message: "missing required name field" }`
 
-- `validatePost()`
+[] `validatePost()`
 
   - `validatePost` validates the `body` on a request to create a new post
   - if the request `body` lacks the required `text` field, respond with status `400` and `{ message: "missing required text field" }`
